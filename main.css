@@ -2665,7 +2665,7 @@ main {
 .Cond2Debriefing_feedback-block__pP52I {
     height: 100%;
     font-size: 0.9rem;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 

@@ -6029,30 +6029,25 @@ function Analysis({
   } = (0,_DebriefingContext__WEBPACK_IMPORTED_MODULE_1__.useDebriefing)();
 
   const nonRequiredActions = () => {
-    return slide.subActions.filter(e => {
+    const nonRequired = slide.subActions.filter(e => {
       var _e$type;
 
-      return ((_e$type = e.type) == null ? void 0 : _e$type.toLowerCase()) !== "required" && e.log_status && e.log_status !== "notFound";
+      return ((_e$type = e.type) == null ? void 0 : _e$type.toLowerCase()) !== "required";
     });
+    console.log("nonRequiredActions()", nonRequired);
+    return nonRequired; // return slide.subActions.filter( (e) =>
+    //   e.type?.toLowerCase() !== "required" &&
+    //   e.log_status &&
+    //   e.log_status !== "notFound"
+    // )
   };
 
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("h4", {
-      children: ["Feedback based on your recorded actions:", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("i", {
-        children: [" ", slide.label]
-      }, void 0, true, {
-        fileName: _jsxFileName,
-        lineNumber: 28,
-        columnNumber: 9
-      }, this)]
-    }, void 0, true, {
-      fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 7
-    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("div", {
       className: _Cond2Debriefing_module_css__WEBPACK_IMPORTED_MODULE_4__["default"]["feedback-list"],
       style: {
         maxHeight: "460px",
+        height: "fit-content",
         overflowY: "auto"
       },
       children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(reactstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -6175,22 +6170,46 @@ function Analysis({
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 29,
       columnNumber: 7
     }, this), nonRequiredActions().length > 0 && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("div", {
       children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("h5", {
-        children: "The following steps were not indicated"
+        children: "The following steps were not indicated:"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 84,
         columnNumber: 11
-      }, this), nonRequiredActions().map(nra => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("p", {
-        children: nra.feedbackErrors
+      }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("dl", {
+        children: nonRequiredActions().map(nra => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), {
+          children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("dt", {
+            children: nra.label
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 88,
+            columnNumber: 15
+          }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("dd", {
+            children: nra.feedbackErrors.map((para, idx) => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("p", {
+              children: para
+            }, idx, false, {
+              fileName: _jsxFileName,
+              lineNumber: 91,
+              columnNumber: 17
+            }, this))
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 89,
+            columnNumber: 15
+          }, this)]
+        }, nra.id, true, {
+          fileName: _jsxFileName,
+          lineNumber: 87,
+          columnNumber: 13
+        }, this))
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 85,
         columnNumber: 11
-      }, this))]
+      }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
       lineNumber: 83,
@@ -6203,7 +6222,7 @@ function Analysis({
       children: "Ok"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 99,
       columnNumber: 7
     }, this)]
   }, void 0, true);
@@ -6758,22 +6777,36 @@ function SequentialIEView({
         fileName: _jsxFileName,
         lineNumber: 125,
         columnNumber: 15
-      }, this), "analysis" === mode && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(_Analysis__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        slide: myData,
-        stepPath: stepPath,
-        analyzedHandler: onAnalysisComplete
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 128,
-        columnNumber: 15
-      }, this), "examine" === mode && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(_ExamineForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }, this), "analysis" === mode && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)("h4", {
+          children: ["Feedback based on your recorded actions:", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)("i", {
+            children: [" ", myData.label]
+          }, void 0, true, {
+            fileName: _jsxFileName,
+            lineNumber: 131,
+            columnNumber: 17
+          }, this)]
+        }, void 0, true, {
+          fileName: _jsxFileName,
+          lineNumber: 129,
+          columnNumber: 15
+        }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(_Analysis__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          slide: myData,
+          stepPath: stepPath,
+          analyzedHandler: onAnalysisComplete
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 133,
+          columnNumber: 15
+        }, this)]
+      }, void 0, true), "examine" === mode && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(_ExamineForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
         slide: myData,
         stepPath: stepPath,
         prompts: (0,_utils__WEBPACK_IMPORTED_MODULE_7__.isAbsent)(ieSummary, myData.id) ? myData.promptsIfAbsent : myData.promptsIfErrors,
         submitHandler: onExamineComplete
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 135,
+        lineNumber: 141,
         columnNumber: 15
       }, this)]
     }, void 0, true)
@@ -6883,15 +6916,27 @@ function TabbedIEView({
       activeTab: activeTab,
       children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(reactstrap__WEBPACK_IMPORTED_MODULE_14__["default"], {
         tabId: "feedback",
-        children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(_Analysis__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)("h4", {
+          children: ["Feedback based on your recorded actions:", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)("i", {
+            children: [" ", myData.label]
+          }, void 0, true, {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 25
+          }, this)]
+        }, void 0, true, {
+          fileName: _jsxFileName,
+          lineNumber: 42,
+          columnNumber: 21
+        }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxDEV)(_Analysis__WEBPACK_IMPORTED_MODULE_5__["default"], {
           slide: myData,
           stepPath: stepPath
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 42,
+          lineNumber: 46,
           columnNumber: 21
-        }, this)
-      }, void 0, false, {
+        }, this)]
+      }, void 0, true, {
         fileName: _jsxFileName,
         lineNumber: 41,
         columnNumber: 17
@@ -6903,12 +6948,12 @@ function TabbedIEView({
           prompts: (0,_utils__WEBPACK_IMPORTED_MODULE_7__.isAbsent)(ieSummary, myData.id) ? myData.promptsIfAbsent : myData.promptsIfErrors
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 48,
+          lineNumber: 52,
           columnNumber: 21
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 51,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
