@@ -6029,17 +6029,11 @@ function Analysis({
   } = (0,_DebriefingContext__WEBPACK_IMPORTED_MODULE_1__.useDebriefing)();
 
   const nonRequiredActions = () => {
-    const nonRequired = slide.subActions.filter(e => {
+    return slide.subActions.filter(e => {
       var _e$type;
 
       return ((_e$type = e.type) == null ? void 0 : _e$type.toLowerCase()) !== "required";
     });
-    console.log("nonRequiredActions()", nonRequired);
-    return nonRequired; // return slide.subActions.filter( (e) =>
-    //   e.type?.toLowerCase() !== "required" &&
-    //   e.log_status &&
-    //   e.log_status !== "notFound"
-    // )
   };
 
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
@@ -6066,35 +6060,35 @@ function Analysis({
               children: "Action"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 47,
+              lineNumber: 40,
               columnNumber: 15
             }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("th", {
               children: "Your Rating"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 48,
+              lineNumber: 41,
               columnNumber: 15
             }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("th", {
               children: "System Rating"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 49,
+              lineNumber: 42,
               columnNumber: 15
             }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("th", {
               children: "Feedback"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 50,
+              lineNumber: 43,
               columnNumber: 15
             }, this)]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 46,
+            lineNumber: 39,
             columnNumber: 13
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 38,
+          lineNumber: 31,
           columnNumber: 11
         }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("tbody", {
           children: (0,_utils__WEBPACK_IMPORTED_MODULE_5__.getRequiredSubActions)(slide).map((sa, idx) => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("tr", {
@@ -6102,82 +6096,82 @@ function Analysis({
               children: sa.label
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 56,
+              lineNumber: 49,
               columnNumber: 17
             }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("td", {
               children: [getUserRating(sa.id) && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("i", {
                 className: "bi-check-lg"
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 58,
+                lineNumber: 51,
                 columnNumber: 44
               }, this), " "]
             }, void 0, true, {
               fileName: _jsxFileName,
-              lineNumber: 57,
+              lineNumber: 50,
               columnNumber: 17
             }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("td", {
               children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_FeedbackIcon__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 isGood: (0,_utils__WEBPACK_IMPORTED_MODULE_5__.isGood)(ieSummary, sa.id)
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 61,
+                lineNumber: 54,
                 columnNumber: 19
               }, this)
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 60,
+              lineNumber: 53,
               columnNumber: 17
             }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("td", {
               children: [(0,_utils__WEBPACK_IMPORTED_MODULE_5__.hasError)(ieSummary, sa.id) && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_AnalysisMessages__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 messages: sa.feedbackErrors
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 68,
+                lineNumber: 61,
                 columnNumber: 21
               }, this), (0,_utils__WEBPACK_IMPORTED_MODULE_5__.isAbsent)(ieSummary, sa.id) && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_AnalysisMessages__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 messages: sa.feedbackAbsent
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 71,
+                lineNumber: 64,
                 columnNumber: 21
               }, this), (0,_utils__WEBPACK_IMPORTED_MODULE_5__.isOutOfOrder)(ieSummary, sa.id) && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_AnalysisMessages__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 messages: sa.feedbackOutOfOrder
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 74,
+                lineNumber: 67,
                 columnNumber: 21
               }, this)]
             }, void 0, true, {
               fileName: _jsxFileName,
-              lineNumber: 63,
+              lineNumber: 56,
               columnNumber: 17
             }, this)]
           }, idx, true, {
             fileName: _jsxFileName,
-            lineNumber: 55,
+            lineNumber: 48,
             columnNumber: 15
           }, this))
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 53,
+          lineNumber: 46,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 37,
+        lineNumber: 30,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 22,
       columnNumber: 7
     }, this), nonRequiredActions().length > 0 && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("div", {
       children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("h5", {
         children: "The following steps were not indicated:"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 84,
+        lineNumber: 77,
         columnNumber: 11
       }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("dl", {
         children: nonRequiredActions().map(nra => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), {
@@ -6185,34 +6179,34 @@ function Analysis({
             children: nra.label
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 88,
+            lineNumber: 81,
             columnNumber: 15
           }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("dd", {
             children: nra.feedbackErrors.map((para, idx) => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)("p", {
               children: para
             }, idx, false, {
               fileName: _jsxFileName,
-              lineNumber: 91,
+              lineNumber: 84,
               columnNumber: 17
             }, this))
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 89,
+            lineNumber: 82,
             columnNumber: 15
           }, this)]
         }, nra.id, true, {
           fileName: _jsxFileName,
-          lineNumber: 87,
+          lineNumber: 80,
           columnNumber: 13
         }, this))
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 78,
         columnNumber: 11
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 76,
       columnNumber: 9
     }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(reactstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
       size: "sm",
@@ -6222,7 +6216,7 @@ function Analysis({
       children: "Ok"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 92,
       columnNumber: 7
     }, this)]
   }, void 0, true);
